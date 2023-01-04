@@ -11,7 +11,7 @@ const galleryMarkup = galleryItems.map(({preview, original, description}) =>
     class="gallery__image"
     src="${preview}"
     data-source="${original}"
-    alt="I${description}"
+    alt="${description}"
   />
 </a>
 </div>`)  
