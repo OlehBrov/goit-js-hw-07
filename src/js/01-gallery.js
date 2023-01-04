@@ -17,7 +17,10 @@ const galleryMarkup = galleryItems.map(({preview, original, description}) =>
 </div>`)  
 .join("");
 
+
 galleryRef.insertAdjacentHTML("afterbegin", galleryMarkup);
+
+
 
 galleryRef.addEventListener("click", openOriginalImage);
 
