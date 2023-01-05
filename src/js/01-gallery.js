@@ -27,9 +27,11 @@ function openOriginalImage(event){
     return 
   };
   event.preventDefault();
-   basicLightbox.create(`<img src="${event.target.dataset.source}" alt = "${event.target.alt}"/>`, {className: 'basicLightbox'}).show()
-  
+   basicLightbox.create(`<img src="${event.target.dataset.source}" alt = "${event.target.alt}"/>`, {
+    className: 'basicLightbox',
+    onShow: (basicLightbox) => {window.addEventListener('keydown', (event) => {
+      if(event.code === 'Escape')basicLightbox.close()})},
+    onClose: (basicLightbox) => {window.removeEventListener('keydown', (event) => {basicLightbox.close()})}
+  }).show()
+     
 }
-
-
-
