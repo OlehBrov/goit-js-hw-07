@@ -20,13 +20,16 @@ const galleryMarkup = galleryItems.map(({preview, original, description}) =>
 
 galleryRef.insertAdjacentHTML("afterbegin", galleryMarkup);
 
-
-
 galleryRef.addEventListener("click", openOriginalImage);
 
 function openOriginalImage(event){
-  if(event.target.nodeName !== 'IMG') return;
+  if(event.target.nodeName !== 'IMG') {
+    return 
+  };
   event.preventDefault();
    return basicLightbox.create(`<img src="${event.target.dataset.source}" alt = "${event.target.alt}"/>`, {className: 'basicLightbox'}).show()
   
 }
+
+
+
