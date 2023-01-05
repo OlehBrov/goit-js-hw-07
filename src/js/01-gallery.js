@@ -27,7 +27,7 @@ function openOriginalImage(event){
     return 
   };
   event.preventDefault();
-   return basicLightbox.create(`<img src="${event.target.dataset.source}" alt = "${event.target.alt}"/>`, {className: 'basicLightbox'}).show()
+   basicLightbox.create(`<img src="${event.target.dataset.source}" alt = "${event.target.alt}"/>`, {className: 'basicLightbox'}).show()
   
 }
 
